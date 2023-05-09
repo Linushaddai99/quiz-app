@@ -1,7 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:ital,wght@0,300;0,600;0,700;0,800;1,400&display=swap');
+
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding: 50px 10%;
+}
+
+form input {
+  display: block;
+  margin-bottom: 20px;
+}
+
+select {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.answers-div label,
+.answers-div input {
+  display: inline-block;
+}
+
+.answers-div input {
+  margin-right: 5px;
 }
