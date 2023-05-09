@@ -33,13 +33,12 @@ const Home = () => {
     }
 
     console.log(choiceData)
-    // dispatch(getQuestions(choiceData));
     navigate('/quiz', { state: choiceData });
   }
 
 
   return (
-    <div className='container'>
+    <div className='container selection-form'>
       <h1>Take A Quiz</h1>
       <form onSubmit={handleForm}>
         <label for="number">Number of quesions:</label>

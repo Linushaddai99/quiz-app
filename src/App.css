@@ -10,6 +10,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #0d6efd;
+  color: white;
 }
 
 .container {
@@ -33,4 +35,12 @@ select {
 
 .answers-div input {
   margin-right: 5px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
