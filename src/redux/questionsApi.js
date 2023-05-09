@@ -20,6 +20,3 @@ const getQuestions = createAsyncThunk('quiz-app/getQuestions', async (choice) =>
 });
 
 export default getQuestions;
-
-
-

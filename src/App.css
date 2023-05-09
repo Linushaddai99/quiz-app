@@ -9,7 +9,7 @@
 }
 
 body {
-font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -28,7 +28,7 @@ select {
 
 .answers-div label,
 .answers-div input {
-   display: inline-block;
+  display: inline-block;
 }
 
 .answers-div input {
