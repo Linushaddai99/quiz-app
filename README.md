@@ -33,12 +33,12 @@ In this web application, users are able to take a quiz of their choice by select
 
 ## 🛠 Built With <a name="built-with"></a>
 
-- **Vite**
-- **React**
-- **Redux**
-- **JavaScript**
-- **CSS**
-- **Opentdb API**
+- Vite
+- React
+- Redux
+- JavaScript
+- CSS
+- Opentdb API
 
 <!-- Features -->
 
