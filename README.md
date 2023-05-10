@@ -35,6 +35,7 @@ In this web application, users are able to take a quiz of their choice by select
 
 - **Vite**
 - **React**
+- **Redux**
 - **JavaScript**
 - **CSS**
 - **Opentdb API**
