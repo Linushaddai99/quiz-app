@@ -44,12 +44,9 @@ In this web application, users are able to take a quiz of their choice by select
 
 ### Key Features <a name="key-features"></a>
 
-<!-- > Describe between 1-3 key features of the application. -->
-
-
-- **Users are able to select a quiz category, difficult level(easy/hard/medium) and number of questions (max 10)**
-- **Users are able to see their score at the end of the quiz**
-- **Users able able to restart the quiz at any time.**
+- Users are able to select a quiz category, difficult level(easy/hard/medium) and number of questions (max 10)
+- Users are able to see their score at the end of the quiz
+- Users able able to restart the quiz at any time.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
