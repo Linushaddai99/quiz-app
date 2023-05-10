@@ -77,8 +77,8 @@ const Home = () => {
           className="text-field"
         >
           <option value="Any type">Choose type</option>
-          <option value="multiple">multiple</option>
-          <option value="boolean">boolean</option>
+          <option value="multiple">Multiple</option>
+          <option value="boolean">True/False</option>
         </select>
 
         <button type="submit">Generate Questions</button>
