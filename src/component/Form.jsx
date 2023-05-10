@@ -61,7 +61,7 @@ const Form = ({ questions, status }) => {
         ) : (
           <>
             {questions.map((question, index) => (
-              <div className={currentQuestion === index ? "show" : "hide"}>
+              <div className={currentQuestion === index ? "show" : "hide"} key={question.id}>
                 <p className="question">
                   Question {index + 1}. {question.question}
                 </p>

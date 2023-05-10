@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import getCategories from "../redux/categoriesApi";
 import { useNavigate } from "react-router-dom";
+import getQuestions from "../redux/questionsApi";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,8 @@ const Home = () => {
     if (result.includes(NaN || undefined)) {
       setErr("Please Fill out all the select dropdown!!!");
     } else {
-      navigate("/quiz", { state: data });
+      dispatch(getQuestions(data));
+      navigate("/quiz");
     }
   };
 
@@ -69,7 +71,7 @@ const Home = () => {
         >
           <option value="Any Category">Choose Category</option>
           {categories?.map((category) => (
-            <option value={category?.id}>{category?.name}</option>
+            <option value={category?.id} key={category.id}>{category?.name}</option>
           ))}
         </select>
 
