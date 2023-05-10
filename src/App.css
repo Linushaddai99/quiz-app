@@ -55,7 +55,6 @@ select {
   border-radius: 5px;
   outline: none;
   background-color: #e9ecef;
-
 }
 
 .answers-div label,
@@ -88,7 +87,8 @@ select {
   max-width: 90%;
   margin: 60px auto;
   color: rgb(80, 83, 87);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+  box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+}
 
 .flex {
   display: flex;
