@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page should display Homepage correctly 1`] = `
+<div>
+  <div
+    class="container selection-form"
+  >
+    <h1>
+      Take A Quiz
+    </h1>
+    <form>
+      <label
+        for="number"
+      >
+        Number of quesions:
+      </label>
+      <input
+        class="text-field"
+        placeholder="Maximum of 10"
+        type="number"
+      />
+      <label
+        for="category"
+      >
+        Select Category:
+      </label>
+      <select
+        class="text-field"
+        id="categories"
+        name="categories"
+      >
+        <option
+          value="Any Category"
+        >
+          Choose Category
+        </option>
+      </select>
+      <label
+        for="difficulty"
+      >
+        Select Difficulty:
+      </label>
+      <select
+        class="text-field"
+        id="difficulty"
+        name="difficulty"
+      >
+        <option
+          value="Any difficulty"
+        >
+          Choose difficulty
+        </option>
+        <option
+          value="easy"
+        >
+          easy
+        </option>
+        <option
+          value="medium"
+        >
+          medium
+        </option>
+        <option
+          value="hard"
+        >
+          hard
+        </option>
+      </select>
+      <label
+        for="type"
+      >
+        Select Type:
+      </label>
+      <select
+        class="text-field"
+        id="type"
+        name="type"
+      >
+        <option
+          value="Any type"
+        >
+          Choose type
+        </option>
+        <option
+          value="multiple"
+        >
+          multiple
+        </option>
+        <option
+          value="boolean"
+        >
+          boolean
+        </option>
+      </select>
+      <button
+        type="submit"
+      >
+        Generate Questions
+      </button>
+    </form>
+  </div>
+</div>
+`;

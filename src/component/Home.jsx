@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import getCategories from "../redux/categoriesApi";
-// import getQuestions from '../redux/questionsApi';
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.categories.categories);
+  const categories = useSelector((state) => state?.categories?.categories);
 
   useEffect(() => {
     dispatch(getCategories());
-  }, [dispatch, categories.length]);
+  }, [dispatch, categories?.length]);
 
   const navigate = useNavigate();
 
@@ -29,8 +28,6 @@ const Home = () => {
       difficulty: difficulty,
       type: type,
     };
-
-    console.log(choiceData);
     navigate("/quiz", { state: choiceData });
   };
 
@@ -54,8 +51,8 @@ const Home = () => {
           className="text-field"
         >
           <option value="Any Category">Choose Category</option>
-          {categories.map((category) => (
-            <option value={category.id}>{category.name}</option>
+          {categories?.map((category) => (
+            <option value={category?.id}>{category?.name}</option>
           ))}
         </select>
 
