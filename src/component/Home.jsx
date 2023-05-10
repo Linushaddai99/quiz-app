@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import getCategories from '../redux/categoriesApi';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import getCategories from "../redux/categoriesApi";
 // import getQuestions from '../redux/questionsApi';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
 
@@ -17,43 +15,57 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  const [amount, setAmount] = useState()
+  const [amount, setAmount] = useState();
   const [cate, setCate] = useState();
   const [difficulty, setDifficulty] = useState();
   const [type, setType] = useState();
 
-  const handleForm =(e)=> {
-    e.preventDefault()
+  const handleForm = (e) => {
+    e.preventDefault();
 
     const choiceData = {
       amount: Number(amount),
       category: Number(cate),
       difficulty: difficulty,
-      type: type
-    }
+      type: type,
+    };
 
-    console.log(choiceData)
-    navigate('/quiz', { state: choiceData });
-  }
-
+    console.log(choiceData);
+    navigate("/quiz", { state: choiceData });
+  };
 
   return (
-    <div className='container selection-form'>
+    <div className="container selection-form">
       <h1>Take A Quiz</h1>
       <form onSubmit={handleForm}>
         <label for="number">Number of quesions:</label>
-        <input type="number" onChange={e => setAmount(e.target.value)} placeholder='Maximum of 10' className='text-field'/>
+        <input
+          type="number"
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Maximum of 10"
+          className="text-field"
+        />
 
         <label for="category">Select Category:</label>
-        <select name="categories" id="categories" onChange={e => setCate(e.target.value)} className='text-field'>
-        <option value="Any Category">Choose Category</option>
+        <select
+          name="categories"
+          id="categories"
+          onChange={(e) => setCate(e.target.value)}
+          className="text-field"
+        >
+          <option value="Any Category">Choose Category</option>
           {categories.map((category) => (
-          <option value={category.id}>{category.name}</option>)
-          )}
+            <option value={category.id}>{category.name}</option>
+          ))}
         </select>
 
         <label for="difficulty">Select Difficulty:</label>
-        <select name="difficulty" id="difficulty" onChange={e => setDifficulty(e.target.value)} className='text-field'>
+        <select
+          name="difficulty"
+          id="difficulty"
+          onChange={(e) => setDifficulty(e.target.value)}
+          className="text-field"
+        >
           <option value="Any difficulty">Choose difficulty</option>
           <option value="easy">easy</option>
           <option value="medium">medium</option>
@@ -61,8 +73,13 @@ const Home = () => {
         </select>
 
         <label for="type">Select Type:</label>
-        <select name="type" id="type" onChange={e => setType(e.target.value)} className='text-field'>
-        <option value="Any type">Choose type</option>
+        <select
+          name="type"
+          id="type"
+          onChange={(e) => setType(e.target.value)}
+          className="text-field"
+        >
+          <option value="Any type">Choose type</option>
           <option value="multiple">multiple</option>
           <option value="boolean">boolean</option>
         </select>
@@ -70,7 +87,7 @@ const Home = () => {
         <button type="submit">Generate Questions</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
