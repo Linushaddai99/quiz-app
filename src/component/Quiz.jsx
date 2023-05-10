@@ -21,10 +21,9 @@ const Quiz = () => {
   }, [dispatch, questions.length]);
 
   return (
-    <div className='container'>
+    <div className='container question-card'>
       <p>Category: {questions[0]?.category}</p>
-      <Form questions={questions}/>
-
+      <Form questions={questions} status={status} />
     </div>
   )
 }

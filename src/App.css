@@ -10,22 +10,44 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0d6efd;
+  background-color: #7161ef;
   color: white;
+  font-size: 16px;
 }
 
 .container {
-  padding: 50px 10%;
+  padding: 20px;
 }
 
-form input {
-  display: block;
-  margin-bottom: 20px;
+h1 {
+  text-align: center;
 }
 
-select {
+form button{
+  background-color: #f1e6e1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+
+::placeholder, select {
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-field {
   display: block;
   margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f1e6e1;
 }
 
 .answers-div label,
@@ -43,4 +65,34 @@ select {
 
 .hide {
   display: none;
+}
+
+.selection-form,.question-card {
+  background-color: #fff;
+  width: 600px;
+  max-width: 90%;
+  margin: 50px auto;
+  color: #5a6066;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.question {
+  font-weight: 600;
+  margin: 10px 0;
+  max-width: 100%;
+}
+
+.answers-div {
+  margin-bottom: 6px;
+}
+
+.question-section {
+  margin-bottom: 20px;
 }

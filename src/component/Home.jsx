@@ -42,10 +42,10 @@ const Home = () => {
       <h1>Take A Quiz</h1>
       <form onSubmit={handleForm}>
         <label for="number">Number of quesions:</label>
-        <input type="number" onChange={e => setAmount(e.target.value)} />
+        <input type="number" onChange={e => setAmount(e.target.value)} placeholder='Maximum of 10' className='text-field'/>
 
         <label for="category">Select Category:</label>
-        <select name="categories" id="categories" onChange={e => setCate(e.target.value)}>
+        <select name="categories" id="categories" onChange={e => setCate(e.target.value)} className='text-field'>
         <option value="Any Category">Choose Category</option>
           {categories.map((category) => (
           <option value={category.id}>{category.name}</option>)
@@ -53,7 +53,7 @@ const Home = () => {
         </select>
 
         <label for="difficulty">Select Difficulty:</label>
-        <select name="difficulty" id="difficulty" onChange={e => setDifficulty(e.target.value)}>
+        <select name="difficulty" id="difficulty" onChange={e => setDifficulty(e.target.value)} className='text-field'>
           <option value="Any difficulty">Choose difficulty</option>
           <option value="easy">easy</option>
           <option value="medium">medium</option>
@@ -61,7 +61,7 @@ const Home = () => {
         </select>
 
         <label for="type">Select Type:</label>
-        <select name="type" id="type" onChange={e => setType(e.target.value)}>
+        <select name="type" id="type" onChange={e => setType(e.target.value)} className='text-field'>
         <option value="Any type">Choose type</option>
           <option value="multiple">multiple</option>
           <option value="boolean">boolean</option>
