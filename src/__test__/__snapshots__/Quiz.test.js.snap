@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz page Renders the quiz page correctly 1`] = `
+<div>
+  <div
+    class="container question-card"
+  >
+    <span>
+      Category: 
+    </span>
+    <span />
+    <div>
+      <form>
+        <div
+          class="flex"
+        >
+          <h2>
+            Here's Your Quiz
+          </h2>
+          <button
+            type="button"
+          >
+            Restart
+          </button>
+        </div>
+        <p>
+          Oops!! there are no questions for your selected choices.
+        </p>
+        <button
+          class="backbtn"
+          type="button"
+        >
+          Generate new quesions
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;

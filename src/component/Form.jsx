@@ -12,7 +12,7 @@ const Form = ({ questions, status }) => {
     const newAnswers = [...answers];
     newAnswers[index] = event.target.value;
     setAnswers(newAnswers);
-    console.log(newAnswers)
+    console.log(newAnswers);
   };
 
   const handleSubmit = (e) => {
@@ -49,7 +49,14 @@ const Form = ({ questions, status }) => {
 
         {questions.length < 1 ? (
           <>
-            {status}
+            <p>Oops!! there are no questions for your selected choices.</p>
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              className="backbtn"
+            >
+              Generate new quesions
+            </button>
           </>
         ) : (
           <>

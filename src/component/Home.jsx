@@ -18,20 +18,20 @@ const Home = () => {
   const [cate, setCate] = useState();
   const [difficulty, setDifficulty] = useState();
   const [type, setType] = useState();
-  const [err, setErr] = useState('');
+  const [err, setErr] = useState("");
 
-  const formValidation =(data)=> {
-    const result = [] 
+  const formValidation = (data) => {
+    const result = [];
     for (const property in data) {
-      result.push(data[property])
+      result.push(data[property]);
     }
 
-    if(result.includes(NaN || undefined)) {
-      setErr('Please Fill out all the select dropdown!!!')
+    if (result.includes(NaN || undefined)) {
+      setErr("Please Fill out all the select dropdown!!!");
     } else {
-          navigate("/quiz", { state: data });
+      navigate("/quiz", { state: data });
     }
-  }
+  };
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -43,12 +43,8 @@ const Home = () => {
       type: type,
     };
 
-    formValidation(choiceData)
-
-    // navigate("/quiz", { state: choiceData });
+    formValidation(choiceData);
   };
-
-
 
   return (
     <div className="container selection-form">
