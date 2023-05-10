@@ -33,7 +33,7 @@ const Form = ({ questions, status }) => {
   };
 
   useEffect(() => {
-    setAnswers(Array(questions?.length).fill(""));
+    setAnswers(Array(questions.length).fill(""));
   }, [questions]);
 
   return (
@@ -46,7 +46,7 @@ const Form = ({ questions, status }) => {
           </button>
         </div>
 
-        {questions?.length < 1 ? (
+        {questions.length < 1 ? (
           <>
             <p>Oops!! there are no questions for your selected choices.</p>
             <button
@@ -59,19 +59,19 @@ const Form = ({ questions, status }) => {
           </>
         ) : (
           <>
-            {questions?.map((question, index) => (
+            {questions.map((question, index) => (
               <div className={currentQuestion === index ? "show" : "hide"}>
                 <p className="question">
-                  Question {index + 1}. {question?.question}
+                  Question {index + 1}. {question.question}
                 </p>
                 <div className="answers-div">
                   <input
                     type="radio"
                     name={index + 1}
-                    value={question?.correct_answer}
+                    value={question.correct_answer}
                     onChange={(e) => handleAnswerChange(index, e)}
                   />
-                  <label>{question?.correct_answer}</label>
+                  <label>{question.correct_answer}</label>
                 </div>
                 {question?.incorrect_answers.map((ans) => (
                   <div className="answers-div">
@@ -103,7 +103,7 @@ const Form = ({ questions, status }) => {
             </div>
             {showScore ? (
               <h1>
-                Score: {score}/{questions?.length}
+                Score: {score}/{questions.length}
               </h1>
             ) : (
               ""

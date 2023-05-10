@@ -11,5 +11,3 @@ const getCategories = createAsyncThunk('quiz-app/getCountries', async () => {
 });
 
 export default getCategories;
-
-
