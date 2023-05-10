@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import getQuestions from "../redux/questionsApi";
@@ -12,16 +12,15 @@ const Quiz = () => {
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions.questions);
   const status = useSelector((state) => state.categories.status);
-  console.log(questions);
 
   useEffect(() => {
     dispatch(getQuestions(choice));
-  }, [dispatch, questions.length]);
+  }, [dispatch, questions?.length]);
 
   return (
     <div className="container question-card">
       <span>Category: </span>
-      <span>{questions[0]?.category}</span>
+      <span>{questions[0].category}</span>
       <Form questions={questions} status={status} />
     </div>
   );

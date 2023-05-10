@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 const Form = ({ questions, status }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -33,7 +33,7 @@ const Form = ({ questions, status }) => {
   };
 
   useEffect(() => {
-    setAnswers(Array(questions.length).fill(""));
+    setAnswers(Array(questions?.length).fill(""));
   }, [questions]);
 
   return (
@@ -46,44 +46,48 @@ const Form = ({ questions, status }) => {
           </button>
         </div>
 
-        {questions.length < 1 ? (
+        {questions?.length < 1 ? (
           <>
             <p>Oops!! there are no questions for your selected choices.</p>
-            <button type="button" onClick={() => navigate('/')} className="backbtn">
-                Generate new quesions
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              className="backbtn"
+            >
+              Generate new quesions
             </button>
           </>
         ) : (
           <>
-            {questions.map((question, index) => (
+            {questions?.map((question, index) => (
               <div className={currentQuestion === index ? "show" : "hide"}>
                 <p className="question">
-                  Question {index + 1}. {question.question}
+                  Question {index + 1}. {question?.question}
                 </p>
                 <div className="answers-div">
                   <input
                     type="radio"
                     name={index + 1}
-                    value={question.correct_answer}
+                    value={question?.correct_answer}
                     onChange={(e) => handleAnswerChange(index, e)}
                   />
-                  <label htmlFor="">{question.correct_answer}</label>
+                  <label>{question?.correct_answer}</label>
                 </div>
-                {question.incorrect_answers.map((ans) => (
+                {question?.incorrect_answers.map((ans) => (
                   <div className="answers-div">
                     <input
                       type="radio"
                       name={index + 1}
                       value={ans}
-                      onChange={  (e) => handleAnswerChange(index, e)}
+                      onChange={(e) => handleAnswerChange(index, e)}
                     />
-                    <label htmlFor="">{ans}</label>
+                    <label>{ans}</label>
                   </div>
                 ))}
               </div>
             ))}
             <div>
-              {currentQuestion === questions.length ? (
+              {currentQuestion === questions?.length ? (
                 <button type="submit">Submit</button>
               ) : (
                 <button
@@ -99,7 +103,7 @@ const Form = ({ questions, status }) => {
             </div>
             {showScore ? (
               <h1>
-                Score: {score}/{questions.length}
+                Score: {score}/{questions?.length}
               </h1>
             ) : (
               ""
