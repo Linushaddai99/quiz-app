@@ -117,3 +117,10 @@ select {
 .backbtn {
   margin: 20px 0;
 }
+
+.error-msg {
+  font-size: 14px;
+  color: crimson;
+  font-style: italic;
+  /* margin: 10px 0; */
+}
