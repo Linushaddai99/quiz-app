@@ -23,7 +23,7 @@ h1 {
   text-align: center;
 }
 
-form button{
+form button {
   background-color: #f1e6e1;
   padding: 10px 20px;
   border: none;
@@ -32,10 +32,10 @@ form button{
   cursor: pointer;
   font-weight: 600;
   text-transform: uppercase;
-
 }
 
-::placeholder, select {
+::placeholder,
+select {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -67,14 +67,15 @@ form button{
   display: none;
 }
 
-.selection-form,.question-card {
+.selection-form,
+.question-card {
   background-color: #fff;
   width: 600px;
   max-width: 90%;
   margin: 50px auto;
   color: #5a6066;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 .flex {
