@@ -39,6 +39,7 @@ In this web application, users are able to take a quiz of their choice by select
 - JavaScript
 - CSS
 - Opentdb API
+- Jest
 
 <!-- Features -->
 
@@ -56,7 +57,7 @@ In this web application, users are able to take a quiz of their choice by select
 
 <!-- > Add a link to your deployed project. -->
 
-- [Live Demo Link](https://linus-countries.netlify.app/)
+- [Live Demo Link](https://quiz-app-7j3l.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
