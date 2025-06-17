@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../hooks/stateHooks";
 import { useEffect } from "react";
 import getCategories from "../redux/categoriesApi";
 import { useNavigate } from "react-router-dom";
 import getQuestions from "../redux/questionsApi";
+import { ChoiceType } from "../types/types";
+import { RootState } from "../redux/configStore";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const categories = useSelector((state) => state?.categories?.categories);
+  const dispatch = useAppDispatch();
+  const categories = useAppSelector((state: RootState) => state?.categories?.categories);
 
   useEffect(() => {
     dispatch(getCategories());
@@ -15,17 +18,14 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  const [amount, setAmount] = useState();
-  const [cate, setCate] = useState();
-  const [difficulty, setDifficulty] = useState();
-  const [type, setType] = useState();
+  const [amount, setAmount] = useState('');
+  const [cate, setCate] = useState('');
+  const [difficulty, setDifficulty] = useState('');
+  const [type, setType] = useState('');
   const [err, setErr] = useState("");
 
-  const formValidation = (data) => {
-    const result = [];
-    for (const property in data) {
-      result.push(data[property]);
-    }
+  const formValidation = (data: ChoiceType) => {
+    const result = [...Object.values(data)];
 
     if (result.includes(NaN || undefined)) {
       setErr("Please Fill out all the select dropdown!!!");
@@ -35,7 +35,7 @@ const Home = () => {
     }
   };
 
-  const handleForm = (e) => {
+  const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const choiceData = {
@@ -48,24 +48,29 @@ const Home = () => {
     formValidation(choiceData);
   };
 
+
   return (
     <div className="container selection-form">
       <h1>Take A Quiz</h1>
       <p className="error-msg">{err}</p>
+      
       <form onSubmit={handleForm}>
-        <label for="number">Number of quesions:</label>
+        <label htmlFor="number">Number of quesions:</label>
         <input
           type="number"
           onChange={(e) => setAmount(e.target.value)}
+          value={amount}
           placeholder="Maximum of 10"
           className="text-field"
+          required
         />
 
-        <label for="category">Select Category:</label>
+        <label htmlFor="category">Select Category:</label>
         <select
           required
           name="categories"
           id="categories"
+          value={cate}
           onChange={(e) => setCate(e.target.value)}
           className="text-field"
         >
@@ -75,10 +80,11 @@ const Home = () => {
           ))}
         </select>
 
-        <label for="difficulty">Select Difficulty:</label>
+        <label htmlFor="difficulty">Select Difficulty:</label>
         <select
           name="difficulty"
           id="difficulty"
+          value={difficulty}
           onChange={(e) => setDifficulty(e.target.value)}
           className="text-field"
           required
@@ -89,10 +95,11 @@ const Home = () => {
           <option value="hard">hard</option>
         </select>
 
-        <label for="type">Select Type:</label>
+        <label htmlFor="type">Select Type:</label>
         <select
           name="type"
           id="type"
+          value={type}
           onChange={(e) => setType(e.target.value)}
           className="text-field"
           required

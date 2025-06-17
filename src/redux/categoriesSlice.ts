@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import getCategories from './categoriesApi';
+import { CategoriesState } from '../types/types';
 
-const categoriesSlice = createSlice({
-  name: 'categories',
-  initialState: {
+const initialState: CategoriesState = {
     categories: [],
     status: 'idle',
     error: null,
-  },
+  }
+
+const categoriesSlice = createSlice({
+  name: 'categories',
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -20,7 +23,7 @@ const categoriesSlice = createSlice({
       }))
       .addCase(getCategories.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message;
+        state.error = action.error.message || 'Something went wrong';
       });
   },
 });
