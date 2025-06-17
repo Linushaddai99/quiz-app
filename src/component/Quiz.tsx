@@ -1,10 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useAppSelector } from "../hooks/stateHooks";
+import { RootState } from "../redux/configStore";
 import Form from "./Form";
 
 const Quiz = () => {
-  const questions = useSelector((state) => state.questions.questions);
-  const status = useSelector((state) => state.categories.status);
+  const questions = useAppSelector((state: RootState) => state.questions.questions);
+  const status = useAppSelector((state: RootState) => state.categories.status);
 
 
   return (
